@@ -4,6 +4,11 @@
     box-sizing: border-box;
 
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .main-nav {
     background: #e2e2e2;
     height: 18vh;
@@ -68,7 +73,7 @@
     height: 60px;
 }
 .container-hero {
-    background-image: url('/frontend/assets/imgs/ptaa-est.jpg');
+    background-image: url('./imgs/ptaa-est.jpg');
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -102,7 +107,7 @@
     margin-bottom: .955rem;
 }
 .container-text p {
-    pading-bottom: .7rem;
+    padding-bottom: .7rem;
     font-size: 1.923rem;
     font-family: 'Inter', serif;
     margin-bottom: .5rem;
@@ -172,7 +177,7 @@
     flex-direction: column;
     gap: .75rem;
 }
-figure {
+.figure-img {
     margin: auto;
 }
 .section-header {
@@ -213,10 +218,10 @@ figure {
     aspect-ratio: 8/7;
 }
 .last-section {
-    height: 60vh;
+    /* height: 60vh; */
     margin: 1rem;
 }
-.map-uy {
+.map-uy img {
     object-fit: contain;
     width: 100%;
     height: auto;
@@ -236,6 +241,7 @@ figure {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1.123rem;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
     border-bottom: .5px solid #000;
 }
@@ -250,8 +256,18 @@ figure {
     padding: 4px 2px;
 }
 .article-for-each {
-    width: 30%;
+    flex: 1;
+    /* height: 100%; */
     font-family: 'Inter', serif;
+}
+.article-for-each a {
+    padding: 8px 4px;
+    display: flex;
+    font-size: 20px;
+    margin: .5rem 0;
+    width: 100%;
+    margin-bottom: 12px;
+    text-decoration: none;
 }
 .article-for-each h3 {
     font-size: 1.423rem;
@@ -261,6 +277,43 @@ figure {
 .article-for-each p {
     padding: 4px 0;
 }
+
+.footer-uruguay {
+    position: relative;
+    width: 100%;
+    background: #e2e2e2;
+    height: auto;
+}
+.footer-uruguay ul { 
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem auto;
+}
+.footer-uruguay ul a {
+    list-style-type: none;
+    padding: 1rem 0;
+    text-decoration: none;
+    font-family: 'Inter', serif;
+}
+.footer-section { 
+    display: flex;
+    font-family: Helvetica, sans-serif;
+    justify-content: space-evenly;
+    height: max-content;
+}
+.footer-section a {
+    width: 50px
+}
+.footer-section a svg {
+    width: 125px;
+    /* height: 125px; */
+}
+.st0{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill:#FBB800;}
+.st1{fill:#030d90;}
+.st2{fill:#0D0D0D;}
 
 @keyframes in-n-out {
     0% {
@@ -277,5 +330,62 @@ figure {
     }
     100% {
         transform: scale(1, 1)
+    }
+}
+@media (width <= 800px) {
+    .container-text {
+        padding: 0;
+    }
+    .last-section-article {
+        display: flex;
+        flex-direction: column;
+    }
+    .article-for-each {
+        width: 60%;
+    }
+    .main-nav {
+        height: auto;
+        flex-direction:column ;
+    }
+    .nav-ul {
+        flex-direction: column;
+    }
+    .nav-ul a {
+        font-size: 1.42rem;
+    }
+    .nav-header {
+        margin: auto;
+    }
+    .nav-header a svg {
+        width: 180px;
+    }
+    .container-social {
+        margin: auto;
+    }
+    .heading-uruguay-sect {
+        text-align: left;
+        padding-left: 8px;
+    }
+    .section-for-uruguay {
+        flex-direction: column;
+    }
+    .footer-uruguay ul {
+        flex-direction: column;
+        
+    }
+    .footer-uruguay ul li {
+        margin: auto;
+        padding: 0 2rem;
+    }
+    .footer-section {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0 2rem;
+    }
+}
+@media (width <= 600px) {
+    .article-place { 
+        flex-direction: column;
     }
 }
